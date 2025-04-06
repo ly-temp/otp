@@ -77,7 +77,7 @@ function updateQrCode() {
     const account = document.getElementById('input-account').value;
     const period = document.getElementById('input-period').value;
 
-    let qrMessage = 'https://qoomon.me'
+    let qrMessage = 'https://qoo.monster'
     document.getElementById('otpauth-qr-overlay').style.display = '';
     
     if (secret && account) {
@@ -115,8 +115,8 @@ function updateQrCode() {
 }
 
 function updateLabel() {
-    const issuer = document.getElementById('input-issuer').value;
-    const account = document.getElementById('input-account').value;
+    const issuer = document.getElementById('input-issuer').value?.trim();
+    const account = document.getElementById('input-account').value?.trim();
     let label = issuer;
     if(issuer && account) {
       label = `${issuer} (${account})`
